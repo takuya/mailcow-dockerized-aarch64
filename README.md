@@ -11,5 +11,10 @@ cd mailcow-dockerized
 ./generate_config.sh
 docker compose up -d 
 ```
+# run x86 on arm 
 
+
+```sh
+sudo apt-get install qemu binfmt-support qemu-user-static
+```
 
