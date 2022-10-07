@@ -39,20 +39,20 @@ sudo iptables-save  | sudo tee /etc/iptables/rules.v4
 
 ## sogo issue 
 
-Mailcow use `sogo.nu nightly builts`, but no arm binary on sogo.nu site.
-Debian/Sid has Arm binary. so we can use it.
-id:sogo homedir is differ from sogo.nu nightly, `GNUStep Default ` and symbolic link should be fixed
+Mailcow use `sogo.nu nightly builts`, but no arm binary on sogo.nu site.   
+Debian/Sid has Arm binary. so we can use it.  
+id:sogo homedir is differ from sogo.nu nightly, `GNUStep Default ` and symbolic link should be fixed  
 
 ## dovoecot isse 
 
-Mailcow use dovecot official release, but no arm binary available.
-Debian/Sid has Arm binary. so we can use it.
+Mailcow use dovecot official release, but no arm binary available.   
+Debian/Sid has Arm binary. so we can use it.   
 
 ## rspamd issue 
 
-Mailcow use rspamd official release repos, but no arm binary in that repo.
-We can use Debian/Sid Instead, but some error will occure in SA_RULE(/etc/../sa_rule)
-
+Mailcow use rspamd official release repos, but no arm binary in that repo.   
+We can use Debian/Sid Instead, but some error will occure in SA_RULE(/etc/../sa_rule)   
+  
 ` truncate -S0 data/conf/rspamd/custom/sa-rules ` for  quick-fix.
 
 ## clamd
