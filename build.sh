@@ -15,6 +15,7 @@ function clone_repo(){
 function apply_patch(){
   src/sogo-patch.sh
   src/dovecot-patch.sh
+  src/disable-v6.sh
 
 }
 function build_docker(){
