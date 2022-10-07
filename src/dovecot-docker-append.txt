@@ -1,0 +1,19 @@
+## for aarch64 build
+RUN echo 'dovecot-arm64' \
+  && apt-get -y --no-install-recommends install \
+  dovecot-auth-lua \
+  dovecot-managesieved \
+  dovecot-sieve \
+  dovecot-lmtpd \
+  dovecot-ldap \
+  dovecot-mysql \
+  dovecot-core \
+  dovecot-pop3d \
+  dovecot-imapd \
+  dovecot-solr \
+  && pip3 install mysql-connector-python html2text jinja2 redis \
+  && apt-get autoremove --purge -y \
+  && apt-get autoclean \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /tmp/* /var/tmp/* /root/.cache/
+

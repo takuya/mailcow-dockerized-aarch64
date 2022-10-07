@@ -1,0 +1,23 @@
+
+## for arm64
+RUN echo 'enable sid,testing' \
+  && echo 'deb http://ftp.jp.debian.org/debian testing main contrib non-free' >> /etc/apt/sources.list \
+  && echo 'deb-src http://ftp.jp.debian.org/debian testing main contrib non-free' >>  /etc/apt/sources.list \
+  && apt-get update \
+  && apt-get install -y sogo/testing sogo-activesync/testing \
+  && apt-get autoclean;
+
+RUN usermod -d /var/lib/sogo sogo
+RUN mkdir -p   /var/lib/sogo/GNUstep/Defaults/ \
+  && touch /var/lib/sogo/GNUstep/Defaults/sogod.plist \
+  && chown -R sogo:sogo   /var/lib/sogo  \
+  && mkdir -p /var/run/sogo/ \
+  && touch /var/run/sogo/sogo.pid \
+  && chown -R sogo:sogo   /var/run/sogo
+
+
+RUN echo 'install debug tools ' \
+  && apt-get update \
+  && apt-get install -y curl vim-nox procps \
+  && apt-get autoclean;
+
