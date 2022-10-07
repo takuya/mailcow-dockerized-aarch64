@@ -10,7 +10,7 @@ sed -i \
  -e '/gosu nobody true/s/\\/ /' \
  -e '/repo\.dovecot\.org/s/^/#/'  \
  -e '/dovecot-lua/s/dovecot-lua/dovecot-auth-lua/'  \
- -e "/&& apt-get -y --no-install-recommends/i&& echo 'dovecot-arm64' \\" \
+ -e "/gosu nobody true/a\  RUN echo 'dovecot-arm64' \\\\" \
 Dockerfile;
 
 
