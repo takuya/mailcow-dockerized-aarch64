@@ -39,7 +39,7 @@ sudo iptables-save  | sudo tee /etc/iptables/rules.v4
 
 ## sogo issue 
 
-Mailcow use sogo.nu nightly builts, but no arm binary on sogo.nu site.
+Mailcow use `sogo.nu nightly builts`, but no arm binary on sogo.nu site.
 Debian/Sid has Arm binary. so we can use it.
 id:sogo homedir is differ from sogo.nu nightly, `GNUStep Default ` and symbolic link should be fixed
 
