@@ -18,7 +18,7 @@ Without arm binary or build failed, run via qemu
 ```sh
 sudo apt-get install qemu binfmt-support qemu-user-static
 ```
-### prepare docker 
+## prepare docker 
 ```
 ### install docker 
 
@@ -29,7 +29,7 @@ sudo apt install docker-compose-plugin
 sudo usermod -aG docker $USER
 
 
-## iptables でopen ports 
+## iptables open ports 
 sudo iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
 sudo iptables-save  | sudo tee /etc/iptables/rules.v4
