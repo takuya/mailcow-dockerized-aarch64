@@ -11,13 +11,31 @@ cd mailcow-dockerized
 ./generate_config.sh
 docker compose up -d 
 ```
-# run x86 on arm 
+## run x86 docker on arm 
 
 Without arm binary or build failed, run via qemu 
 
 ```sh
 sudo apt-get install qemu binfmt-support qemu-user-static
 ```
+### prepare docker 
+```
+### install docker 
+
+sudo curl -sSL https://get.docker.com/ | CHANNEL=stable sh
+sudo systemctl enable --now docker
+sudo apt update
+sudo apt install docker-compose-plugin
+sudo usermod -aG docker $USER
+
+
+## iptables でopen ports 
+sudo iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT
+sudo iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+sudo iptables-save  | sudo tee /etc/iptables/rules.v4
+
+```
+
 
 ## sogo issue 
 
